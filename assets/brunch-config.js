@@ -47,6 +47,15 @@ exports.config = {
     babel: {
       // Do not use ES6 compiler in vendor code
       ignore: [/vendor/]
+    },
+    postcss: {
+     processors: [
+        require('tailwindcss')('./tailwind.js'),
+      ]
+    },
+    vue: {
+      extractCSS: true,
+      out: "../priv/static/css/components.css"
     }
   },
 
@@ -57,6 +66,10 @@ exports.config = {
   },
 
   npm: {
-    enabled: true
+    enabled: true,
+    whitelist: ['vue'],
+    globals: {
+      Vue: "vue/dist/vue.common.js"
+    }
   }
 };

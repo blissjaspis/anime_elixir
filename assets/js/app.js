@@ -11,7 +11,15 @@
 //
 // If you no longer want to use a dependency, remember
 // to also remove its path from "config.paths.watched".
+// import Vue from "vue"
 import "phoenix_html"
+import Example from "../components/Example.vue"
+
+Vue.component('example', Example)
+
+new Vue({
+    el: "#app",
+});
 
 // Import local files
 //

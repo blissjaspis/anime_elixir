@@ -1,35 +1,63 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Anime Indonesia HD">
+        <meta name="author" content="">
 
-    <title>Hello Anime!</title>
-    <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
-  </head>
+        <title>Hello Anime!</title>
 
-  <body>
-    <div class="container">
-      <header class="header">
-        <nav role="navigation">
-          <ul class="nav nav-pills pull-right">
-            <li><a href="http://www.phoenixframework.org/docs">Get Started</a></li>
-          </ul>
-        </nav>
-        <span class="logo"></span>
-      </header>
+        <%# Scripts %>
+        <script src="<%= static_path(@conn, "/js/app.js") %>" defer></script>
 
-      <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
-      <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+        <%# Styles %>
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/app.css") %>">
+        <link rel="stylesheet" href="<%= static_path(@conn, "/css/components.css") %>">
+    </head>
 
-      <main role="main">
-        <%= render @view_module, @view_template, assigns %>
-      </main>
+    <body>
+        <div id="app">
+            <nav class="flex items-center bg-blue-darkest p-6 justify-between">
+                <div class="flex items-center flex-no-shrink text-white mr-6">
+                    <a class="no-underline text-white font-bold tracking-tight text-xl" href="/">BeVeace</a>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-full flex-grow">
+                        <ul class="flex list-reset">
+                            <li class="inline-flex">
+                                <a class="flex-1 text-white text-sm no-underline py-2 px-2 hover:text-grey-light hover:underline" href="#">Login</a>
+                                <a class="flex-1 text-white text-sm no-underline py-2 px-2 bg-purple-dark border border-grey hover:bg-purple-lighter hover:text-purple-darkest" href="#">Register</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
 
-    </div> <!-- /container -->
-    <script src="<%= static_path(@conn, "/js/app.js") %>"></script>
-  </body>
+            <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
+            <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
+
+            <main role="main">
+                <%= render @view_module, @view_template, assigns %>
+            </main>
+
+            <div class="border-t mt-8">
+                <div class="container mx-auto px-4 py-4">
+                    <div class="flex items-center justify-between text-sm">
+                        <div class="text-grey-dark ml-4">
+                            &copy; 2018 BeVeace
+                        </div>
+                        <div>
+                            <div class="text-center py-3">
+                                <a href="#" class="no-underline text-grey-dark mr-4">Home</a>
+                                <a href="#" class="no-underline text-grey-dark mr-4">Careers</a>
+                                <a href="#" class="no-underline text-grey-dark">Legal &amp; Privacy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
 </html>
