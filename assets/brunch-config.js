@@ -69,7 +69,7 @@ exports.config = {
     enabled: true,
     whitelist: ['vue'],
     globals: {
-      Vue: "vue/dist/vue.common.js"
+      Vue: "vue/dist/vue.js"
     }
   }
 };
