@@ -23,7 +23,7 @@
                             </div>
 
                             <div class="ml-1 mt-2">
-                                <a class="text-grey text-xs no-underline border-b border-dashed hover:underline hover:border-none hover:text-grey-dark" href="<%= page_path(@conn, :password_reset) %>">Forgot your password?</a>
+                                <a class="text-grey text-xs no-underline border-b border-dashed hover:underline hover:border-none hover:text-grey-dark" href="<%= forgot_password_path(@conn, :reset) %>">Forgot your password?</a>
                             </div>
 
                             <div class="mt-8">
@@ -33,7 +33,7 @@
                         </form>
                     </div>
                     <div class="mt-2 text-center">
-                    <p class="text-sm text-grey">Don’t have an account yet? <a class="text-white" href="<%= page_path(@conn, :register) %>">Sign up</a></p>
+                    <p class="text-sm text-grey">Don’t have an account yet? <a class="text-white" href="<%= register_path(@conn, :index) %>">Sign up</a></p>
                     </div>
                 </div>
             </div>
