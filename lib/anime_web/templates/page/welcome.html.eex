@@ -4,8 +4,8 @@
             <h1 class="text-white tracking-tight font-thin">BeVeace</h1>
         </div>
         <div class="text-sm">
-                <a class="no-underline py-2 px-4 text-white hover:text-teal-lightest" href="">Login</a>
-                <a class="no-underline py-2 px-4 border rounded-full text-white hover:bg-teal" href="<%= page_path(@conn, :register) %>" style="border-color:#64a2af">Register</a>
+            <%= link "Login", to: login_path(@conn, :index), class: "no-underline py-2 px-4 text-white hover:text-teal-lightest"%>
+            <%= link "Register", to: register_path(@conn, :index), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", style: "border-color: #64a2af"%>
         </div>
     </div>
 
