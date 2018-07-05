@@ -8,23 +8,28 @@
                 <div class="max-w-sm w-full">
                     <div class="bg-white py-8 px-8 rounded-lg">
                         <h4 class="text-grey-darker font-normal">To reset your password, enter the email address you use to login.</h4>
-                        <form class="mt-8" action="#" method="post">
-                            
+
+                        <%= form_for @conn, forgot_password_path(@conn, :post), [class: "mt-8"], fn f -> %>
+
                             <div class="flex items-center">
                                 <div class="w-full">
-                                    <input class="appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark" type="email" name="email" placeholder="E-mail" value="" required autofocus>
+                                    <%= email_input f, :email, class: "appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark", placeholder: "E-mail", required: true, autofocus: true %>
                                 </div>
                             </div>
 
-                            <div class="mt-8">
-                                <button class="bg-teal-dark py-3 rounded text-white w-full hover:bg-teal font-bold" type="submit">Send Reset Password Link</button>
+                            <div class="flex items-center mt-8">
+                                <div class="w-full">
+                                    <%= submit "Send Reset Password Link", class: "bg-teal-dark py-3 rounded text-white w-full hover:bg-teal font-bold"%>
+                                </div>
                             </div>
 
-                        </form>
+                        <% end %>
                     </div>
+
                     <div class="mt-2 text-center">
-                    <p class="text-sm text-grey">Nevermind! <%= link "Take me back to login", to: login_path(@conn, :index), class: "text-white" %></p>
+                        <p class="text-sm text-grey">Nevermind! <%= link "Take me back to login", to: login_path(@conn, :index), class: "text-white" %></p>
                     </div>
+
                 </div>
             </div>
         </div>

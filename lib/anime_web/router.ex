@@ -17,9 +17,14 @@ defmodule AnimeWeb.Router do
     pipe_through :browser # Use the default browser stack
 
     get "/", PageController, :index
+    delete "/logout", Auth.LoginController, :logout
+    post "/register", Auth.RegisterController, :post
     get "/register", Auth.RegisterController, :index
+    post "/login", Auth.LoginController, :post
     get "/login", Auth.LoginController, :index
     get "/password/reset", Auth.ForgotPasswordController, :reset
+    post "/password/reset", Auth.ForgotPasswordController, :post
+
   end
 
   # Other scopes may use custom stacks.

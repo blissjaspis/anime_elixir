@@ -9,45 +9,48 @@
                     <div class="bg-white py-8 px-8 rounded-lg">
                         <h4 class="text-grey-darker font-normal">Enter your name, e-mail address & password</h4>
                         
-                        <form class="mt-8" action="#" method="post">
-                            
+                        <%= form_for @changeset, register_path(@conn, :post), [as: :registrations, class: "mt-8"], fn f -> %>
+
                             <div class="flex items-center mb-4">
                                 <div class="w-full">
-                                    <input class="appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark" type="text" name="name" placeholder="Name" value="" required autofocus>
+                                    <%= text_input f, :name, class: "appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark", placeholder: "Name", required: true, autofocus: true %>
+                                    <%= error_tag f, :name %>
                                 </div>
                             </div>
 
                             <div class="flex items-center mb-4">
                                 <div class="w-full">
-                                    <input class="appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark" type="email" name="email" placeholder="E-mail" value="" required autofocus>
+                                    <%= email_input f, :email, class: "appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark", placeholder: "Email", required: true %>
+                                    <%= error_tag f, :email %>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-center mb-4">
                                 <div class="w-full">
-                                    <input class="appearance-none w-full border-2 border-grey-lighter py-2 px-4 leading-tight rounded hover:border-purple-dark" type="password" name="password" placeholder="Password" required>
+                                    <%= password_input f, :password, class: "appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark", placeholder: "Password", required: true %>
+                                    <%= error_tag f, :password %>
                                 </div>
                             </div>
 
-                            <div class="flex items-center">
+                            <div class="flex items-center mb-4">
                                 <div class="w-full">
-                                    <input class="appearance-none w-full border-2 border-grey-lighter py-2 px-4 leading-tight rounded hover:border-purple-dark" type="password" name="password_confirmation" placeholder="Retype Password" required>
+                                    <%= password_input f, :password_confirmation, class: "appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark", placeholder: "Retype Password", required: true %>
+                                    <%= error_tag f, :password_confirmation %>
                                 </div>
                             </div>
 
-                            <div class="mt-8">
-                                <button class="bg-teal-dark py-3 rounded text-white w-full hover:bg-teal font-bold" type="submit">Register</button>
-                            </div>
+                            <%= submit "Register", class: "bg-teal-dark py-3 rounded text-white w-full hover:bg-teal font-bold" %>
 
                             <div class="mt-4">
                                 <p class="text-grey text-xs">By clicking Register, you agree to our <%= link "Terms of Use", to: "#", class: "text-purple font-bold no-underline hover:underline" %> and <%= link "Privacy Policy", to: "#", class: "text-purple font-bold no-underline hover:underline" %>.</p>
                             </div>
-
-                        </form>
+                        <% end %>
                     </div>
+                    
                     <div class="mt-2 text-center">
                         <p class="text-sm text-grey">Already have an account? <%= link "Login", to: login_path(@conn, :index), class: "text-white"%></p>
                     </div>
+
                 </div>
             </div>
         </div>

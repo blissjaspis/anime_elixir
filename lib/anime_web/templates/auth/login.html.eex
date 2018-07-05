@@ -8,17 +8,19 @@
                 <div class="max-w-sm w-full">
                     <div class="bg-white py-8 px-8 rounded-lg">
                         <h4 class="text-grey-darker font-normal">Enter your email address & password</h4>
-                        <form class="mt-8" action="#" method="post">
-                            
+
+                        <%= form_for @conn, login_path(@conn, :post), [class: "mt-8"], fn f -> %>
+
                             <div class="flex items-center">
                                 <div class="w-full">
-                                    <input class="appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark" type="email" name="email" placeholder="E-mail" value="" required autofocus>
+                                    <%= email_input f, :email, class: "appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark", placeholder: "E-mail", required: true, autofocus: true %>
+                                    <p class="text-red italic text-sm mt-1 pl-1"><%= get_flash(@conn, :error) %></p>
                                 </div>
                             </div>
-                            
+
                             <div class="flex items-center mt-4">
                                 <div class="w-full">
-                                    <input class="appearance-none w-full border-2 border-grey-lighter py-2 px-4 leading-tight rounded hover:border-purple-dark" type="password" name="password" placeholder="Password" required>
+                                    <%= password_input f, :password, class: "appearance-none w-full py-2 px-4 border-2 border-grey-lighter rounded leading-tight hover:border-purple-dark", placeholder: "Password", required: true%>
                                 </div>
                             </div>
 
@@ -27,14 +29,16 @@
                             </div>
 
                             <div class="mt-8">
-                                <button class="bg-teal-dark py-3 rounded text-white w-full hover:bg-teal font-bold" type="submit">Log In</button>
+                                <%= submit "Log In", class: "bg-teal-dark py-3 rounded text-white w-full hover:bg-teal font-bold"%>
                             </div>
 
-                        </form>
+                        <% end %>
                     </div>
+
                     <div class="mt-2 text-center">
-                    <p class="text-sm text-grey">Don’t have an account yet? <%= link "Sign up", to: register_path(@conn, :index), class: "text-white" %></p>
+                        <p class="text-sm text-grey">Don’t have an account yet? <%= link "Sign up", to: register_path(@conn, :index), class: "text-white" %></p>
                     </div>
+
                 </div>
             </div>
         </div>
