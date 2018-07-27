@@ -10,7 +10,7 @@ defmodule AnimeWeb.ErrorHelpers do
   """
   def error_tag(form, field) do
     Enum.map(Keyword.get_values(form.errors, field), fn (error) ->
-      content_tag :span, translate_error(error), class: "help-block"
+      content_tag :span, translate_error(error), class: "text-red italic text-sm mt-1 pl-1"
     end)
   end
 

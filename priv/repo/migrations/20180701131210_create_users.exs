@@ -5,7 +5,7 @@ defmodule Anime.Repo.Migrations.CreateUsers do
     create table(:users) do
       add :email, :string
       add :name, :string
-      add :encrypted_password, :string
+      add :password, :string
 
       timestamps()
     end

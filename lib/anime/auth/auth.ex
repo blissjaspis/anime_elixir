@@ -5,11 +5,15 @@ defmodule Anime.Auth do
     def login(email, password) do
         user = Repo.get_by(User, email: email)
         cond do
-            User && user.encrypted_password == password ->
+            user && Comeonin.Argon2.checkpw(password, user.password) ->
                 {:ok, user}
             true ->
                 {:error, :unauthorized}
         end
+    end
+
+    def register(params) do
+        User.registration_changeset(%User{}, params) |> Repo.insert()
     end
 
     def current_user(conn) do
