@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title><%= title() %></title>
+
+        <%# Scripts %>
+        <script src="<%= static_path(@conn, "/js/app.js") %>" defer></script>
+
+        <%# Fonts %>
+        <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,600" rel="stylesheet" type="text/css">
+
+        <%# Styles %>
+        <link href="<%= static_path(@conn, "/css/app.css") %>" rel="stylesheet">
+    </head>
+    <body>
+        <div id="app">
+            <nav class="flex items-center bg-blue-darkest p-6 justify-between">
+                <div class="flex items-center flex-no-shrink text-white mr-6">
+                    <a class="no-underline text-white font-bold tracking-tight text-xl" href="/">BeVeace</a>
+                </div>
+                <div class="flex items-center">
+                    <div class="w-full flex-grow">
+                        <ul class="flex list-reset">
+                            
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+
+            <%= render @view_module, @view_template, assigns %>
+
+            <div class="border-t mt-8">
+                <div class="container mx-auto px-4 py-4">
+                    <div class="flex items-center justify-between text-sm">
+                        <div class="text-grey-dark ml-4">
+                            &copy; 2018 BeVeace
+                        </div>
+                        <div>
+                            <div class="text-center py-3">
+                                <a href="#" class="no-underline text-grey-dark mr-4">Home</a>
+                                <a href="#" class="no-underline text-grey-dark mr-4">Careers</a>
+                                <a href="#" class="no-underline text-grey-dark">Legal &amp; Privacy</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

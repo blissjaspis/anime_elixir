@@ -1,39 +1,41 @@
-<div class="container mx-auto py-4 px-4">
-    <div class="flex items-center justify-between">
-        <div class="ml-8">
-            <h1 class="text-white tracking-tight font-thin">BeVeace</h1>
+<div class="purple-bliss">
+    <div class="container mx-auto py-4 px-4">
+        <div class="flex items-center justify-between">
+            <div class="ml-8">
+                <h1 class="text-white tracking-tight font-thin">BeVeace</h1>
+            </div>
+            <div class="text-sm">
+                <%= if Anime.Auth.user_login?(@conn) do %>
+                    <%= link "Home", to: "/", class: "no-underline py-2 px-4 text-white hover:text-teal-lightest" %>
+                    <%= link "Logout", to: login_path(@conn, :logout), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", method: :delete%>
+                <% else %>
+                    <%= link "Login", to: login_path(@conn, :index), class: "no-underline py-2 px-4 text-white hover:text-teal-lightest" %>
+                    <%= link "Register", to: register_path(@conn, :index), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", style: "border-color: #64a2af"%>
+                <% end %>
+            </div>
         </div>
-        <div class="text-sm">
-            <%= if Anime.Auth.user_login?(@conn) do %>
-                <%= link "Home", to: "/", class: "no-underline py-2 px-4 text-white hover:text-teal-lightest" %>
-                <%= link "Logout", to: login_path(@conn, :logout), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", method: :delete%>
-            <% else %>
-                <%= link "Login", to: login_path(@conn, :index), class: "no-underline py-2 px-4 text-white hover:text-teal-lightest" %>
-                <%= link "Register", to: register_path(@conn, :index), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", style: "border-color: #64a2af"%>
-            <% end %>
+
+        <div class="flex items-center h-screen justify-center">
+        <%= if Anime.Auth.user_login?(@conn) do %>
+            <h1 class="text-grey-lightest text-5xl font-normal leading-tight tracking-wide">
+                <%= "Hi, " <> Anime.Auth.current_user(@conn).name %>        
+            </h1>
+        <% else %>
+            <h1 class="text-grey-lightest text-5xl font-normal leading-tight tracking-wide">Watch with ❤️</h1>
+        <% end %>
         </div>
     </div>
 
-    <div class="flex items-center h-screen justify-center">
-    <%= if Anime.Auth.user_login?(@conn) do %>
-        <h1 class="text-grey-lightest text-5xl font-normal leading-tight tracking-wide">
-            <%= "Hi, " <> Anime.Auth.current_user(@conn).name %>        
-        </h1>
-    <% else %>
-        <h1 class="text-grey-lightest text-5xl font-normal leading-tight tracking-wide">Watch with ❤️</h1>
-    <% end %>
-    </div>
-</div>
-
-<div class="container mx-auto px-4 py-4">
-    <div class="flex items-center justify-between text-sm">
-        <div class="text-grey ml-4">
-            &copy; 2018 BeVeace - Designed with ❤️ in Jakarta, ID
-        </div>
-        <div>
-            <div class="text-center py-3">
-                <a href="#" class="no-underline text-grey mr-4">Careers</a>
-                <a href="#" class="no-underline text-grey">Legal &amp; Privacy</a>
+    <div class="container mx-auto px-4 py-4">
+        <div class="flex items-center justify-between text-sm">
+            <div class="text-grey ml-4">
+                &copy; 2018 BeVeace - Designed with ❤️ in Jakarta, ID
+            </div>
+            <div>
+                <div class="text-center py-3">
+                    <a href="#" class="no-underline text-grey mr-4">Careers</a>
+                    <a href="#" class="no-underline text-grey">Legal &amp; Privacy</a>
+                </div>
             </div>
         </div>
     </div>

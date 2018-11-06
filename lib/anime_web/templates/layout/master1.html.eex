@@ -14,7 +14,7 @@
         <link href="<%= static_path(@conn, "/css/app.css") %>" rel="stylesheet">
     </head>
     <body>
-        <div id="app" class="font-sans purple-bliss">
+        <div id="app" class="font-sans">
             <%= render @view_module, @view_template, assigns %>
         </div>
     </body>

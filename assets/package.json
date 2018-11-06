@@ -13,11 +13,13 @@
   "devDependencies": {
     "babel-brunch": "6.1.1",
     "babel-plugin-transform-runtime": "^6.23.0",
-    "brunch": "2.10.9",
+    "brunch": "^2.10.17",
     "clean-css-brunch": "2.10.0",
-    "postcss-brunch": "^2.1.0",
-    "tailwindcss": "^0.6.5",
+    "postcss-brunch": "^2.10.1",
+    "tailwindcss": "^0.7.2",
     "uglify-js-brunch": "2.10.0",
+    "video.js": "^7.2.4",
+    "videojs-contextmenu": "^2.0.2",
     "vue": "^2.5.17",
     "vue-brunch": "^2.0.3"
   }

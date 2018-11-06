@@ -4,7 +4,7 @@ defmodule AnimeWeb.Auth.LoginController do
     alias Anime.Auth
 
 	plug :put_view, AnimeWeb.AuthView
-	plug :put_layout, "auth.html"
+	plug :put_layout, "master1.html"
 	
     def index(conn, _params) do
 		render conn, "login.html"

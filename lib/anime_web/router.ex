@@ -25,6 +25,7 @@ defmodule AnimeWeb.Router do
     get "/password/reset", Auth.ForgotPasswordController, :reset
     post "/password/reset", Auth.ForgotPasswordController, :post
 
+    get "/anime", PageController, :anime
   end
 
   # Other scopes may use custom stacks.
