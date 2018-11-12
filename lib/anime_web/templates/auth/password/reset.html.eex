@@ -9,7 +9,7 @@
                     <div class="bg-white py-8 px-8 rounded-lg">
                         <h4 class="text-grey-darker font-normal">To reset your password, enter the email address you use to login.</h4>
 
-                        <%= form_for @conn, forgot_password_path(@conn, :post), [class: "mt-8"], fn f -> %>
+                        <%= form_for @conn, Routes.forgot_password_path(@conn, :post), [class: "mt-8"], fn f -> %>
 
                             <div class="flex items-center">
                                 <div class="w-full">
@@ -27,7 +27,7 @@
                     </div>
 
                     <div class="mt-2 text-center">
-                        <p class="text-sm text-grey">Nevermind! <%= link "Take me back to login", to: login_path(@conn, :index), class: "text-white" %></p>
+                        <p class="text-sm text-grey">Nevermind! <%= link "Take me back to login", to: Routes.login_path(@conn, :index), class: "text-white" %></p>
                     </div>
 
                 </div>

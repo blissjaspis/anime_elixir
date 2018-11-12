@@ -8,10 +8,10 @@
         <title>BeVeace</title>
 
         <!-- Scripts -->
-        <script src="<%= static_path(@conn, "/js/app.js") %>" defer></script>
+        <script src="<%= Routes.static_path(@conn, "/js/app.js") %>" defer></script>
 
         <!-- Styles -->
-        <link href="<%= static_path(@conn, "/css/app.css") %>" rel="stylesheet">
+        <link href="<%= Routes.static_path(@conn, "/css/app.css") %>" rel="stylesheet">
     </head>
     <body>
         <div id="app" class="font-sans">

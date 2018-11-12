@@ -7,10 +7,10 @@
             <div class="text-sm">
                 <%= if Anime.Auth.user_login?(@conn) do %>
                     <%= link "Home", to: "/", class: "no-underline py-2 px-4 text-white hover:text-teal-lightest" %>
-                    <%= link "Logout", to: login_path(@conn, :logout), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", method: :delete%>
+                    <%= link "Logout", to: Routes.login_path(@conn, :logout), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", method: :delete%>
                 <% else %>
-                    <%= link "Login", to: login_path(@conn, :index), class: "no-underline py-2 px-4 text-white hover:text-teal-lightest" %>
-                    <%= link "Register", to: register_path(@conn, :index), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", style: "border-color: #64a2af"%>
+                    <%= link "Login", to: Routes.login_path(@conn, :index), class: "no-underline py-2 px-4 text-white hover:text-teal-lightest" %>
+                    <%= link "Register", to: Routes.register_path(@conn, :index), class: "no-underline py-2 px-4 border rounded-full text-white hover:bg-teal", style: "border-color: #64a2af"%>
                 <% end %>
             </div>
         </div>

@@ -10,7 +10,7 @@
                     <div class="bg-white py-8 px-8 rounded-lg">
                         <h4 class="text-grey-darker font-normal">Enter your name, e-mail address & password</h4>
                         
-                        <%= form_for @changeset, register_path(@conn, :post), [as: :registrations, class: "mt-8"], fn f -> %>
+                        <%= form_for @changeset, Routes.register_path(@conn, :post), [as: :registrations, class: "mt-8"], fn f -> %>
 
                             <div class="flex items-center mb-4">
                                 <div class="w-full">
@@ -49,7 +49,7 @@
                     </div>
                     
                     <div class="mt-2 text-center">
-                        <p class="text-sm text-grey">Already have an account? <%= link "Login", to: login_path(@conn, :index), class: "text-white"%></p>
+                        <p class="text-sm text-grey">Already have an account? <%= link "Login", to: Routes.login_path(@conn, :index), class: "text-white"%></p>
                     </div>
 
                 </div>

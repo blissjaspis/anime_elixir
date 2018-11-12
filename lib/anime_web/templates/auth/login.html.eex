@@ -9,7 +9,7 @@
                     <div class="bg-white py-8 px-8 rounded-lg">
                         <h4 class="text-grey-darker font-normal">Enter your email address & password</h4>
 
-                        <%= form_for @conn, login_path(@conn, :post), [class: "mt-8"], fn f -> %>
+                        <%= form_for @conn, Routes.login_path(@conn, :post), [class: "mt-8"], fn f -> %>
 
                             <div class="flex items-center">
                                 <div class="w-full">
@@ -25,7 +25,7 @@
                             </div>
 
                             <div class="ml-1 mt-2">
-                                <%= link "Forgot your password?", to: forgot_password_path(@conn, :reset), class: "text-grey text-xs no-underline border-b border-dashed hover:underline hover:border-none hover:text-grey-dark" %>
+                                <%= link "Forgot your password?", to: Routes.forgot_password_path(@conn, :reset), class: "text-grey text-xs no-underline border-b border-dashed hover:underline hover:border-none hover:text-grey-dark" %>
                             </div>
 
                             <div class="mt-8">
@@ -36,7 +36,7 @@
                     </div>
 
                     <div class="mt-2 text-center">
-                        <p class="text-sm text-grey">Don’t have an account yet? <%= link "Sign up", to: register_path(@conn, :index), class: "text-white" %></p>
+                        <p class="text-sm text-grey">Don’t have an account yet? <%= link "Sign up", to: Routes.register_path(@conn, :index), class: "text-white" %></p>
                     </div>
 
                 </div>
